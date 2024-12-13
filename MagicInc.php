@@ -14,7 +14,10 @@ function magicInc($x, $inc) {
 }
 
 // Main logic for magic_inc
-function magic_inc($x, $inc) {
+function magic_inc($x, $type) {
+    if ($type === "inc") $inc = 1;
+    else if ($type === "dec") $inc = -1;
+    else return 0;
     if (($x > 9 && $x < 20 && $inc === -1) || ($x < -9 && $x > -20 && $inc === 1)) {
         return ($inc === -1 ? 9 : -9);
     } elseif ($x > 9 || $x < -9) {
